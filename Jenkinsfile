@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     //    sh "helm repo update"
-                        sh "helm upgrade --install app-release argocd-training -f values.yaml --insecure-skip-tls-verify --kube-insecure-skip-tls-verify"                
+                        sh "helm upgrade --install app-release ./Chart.yaml -f values.yaml --insecure-skip-tls-verify --kube-insecure-skip-tls-verify"                
             }
         }
     }
