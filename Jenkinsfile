@@ -9,7 +9,7 @@ pipeline {
         stage ("Deploy App") {
             steps {
                 script {
-                    #    sh "helm repo update"
+                    //    sh "helm repo update"
                         sh "helm upgrade --install app release argocd-training -f values.yaml"                
             }
         }
