@@ -1,5 +1,13 @@
 pipeline {
 
+    agent {
+        kubernetes {
+            label 'jenkins-slave-poc-clickstack'
+            defaultContainer 'jnlp'
+            yaml "agent.yaml"
+        }
+    }    
+
     stages {
 
         stage ("Deploy App") {
