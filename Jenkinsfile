@@ -1,12 +1,8 @@
 pipeline {
 
-    agent {
-        kubernetes {
-            label 'jenkins-slave-poc-clickstack'
-            defaultContainer 'jnlp'
-            yaml "agent.yaml"
-        }
-    }    
+    agent { 
+        label 'built-in' 
+    }
 
     stages {
 
