@@ -9,11 +9,8 @@ pipeline {
         stage ("Deploy App") {
             steps {
                 script {
-                    container('gcloud-helm') {
                         sh "helm repo update"
-                        sh "helm upgrade --install app release argocd-training -f values.yaml"
-
-                }
+                        sh "helm upgrade --install app release argocd-training -f values.yaml"                
             }
         }
     }
