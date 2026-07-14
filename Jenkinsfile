@@ -10,7 +10,8 @@ pipeline {
             steps {
                 script {
                     //    sh "helm repo update"
-                        sh "helm upgrade --install app-release ./Chart.yaml -f values.yaml --insecure-skip-tls-verify --kube-insecure-skip-tls-verify"                
+                        sh "helm package ./Chart"
+                        sh "helm upgrade --install app-release Chart-0.1.0.tgz -f values.yaml --insecure-skip-tls-verify --kube-insecure-skip-tls-verify"                
             }
         }
     }
